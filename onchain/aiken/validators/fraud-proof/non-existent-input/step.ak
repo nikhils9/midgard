@@ -19,16 +19,12 @@ use midgard/fraud_proof/non_existing_input/step.{
   Cancel, Continue, StepRedeemer as Step1Redeemer,
 }
 
-// ----------------- DOUBLE SPEND FRAUD PROOF: DEFINITION --------------------------
-// Proves membership Merkle proofs for 2 unique txs which spends the same input UTxO
+// ----------------- NON EXISTENT INPUT FRAUD PROOF: DEFINITION --------------------------
+// Proves membership Merkle proof for a tx which spends a non existent input UTxO
 
-// Transaction1 (tx1):
-//   Inputs (tx_in1): [UTxO_A]
-//   Outputs (tx_out1): [UTxO_B, UTxO_C]
-
-// Transaction2 (tx2)
-//   Inputs (tx_in2): [UTxO_A]  <- Same UTxO as tx1
-//   Outputs (tx_out2): [UTxO_D]
+// Transaction (tx):
+//   Inputs (tx_in): [UTxO_A] (UTxO_A does not exist in the ledger)
+//   Outputs (tx_out): [UTxO_B, UTxO_C]
 
 validator main(
   // Fraud proof token policy
