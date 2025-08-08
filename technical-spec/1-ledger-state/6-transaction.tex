@@ -122,9 +122,9 @@ We use the empty set symbol \code{$\varnothing$} to indicate fields required to 
     \end{array} \right\} \\
     \T{MidgardSTxBody} \coloneq\;& \left\{
     \begin{array}{ll}
-        \T{spend\_inputs} : & \T{Set(OutputRef)} \\
-        \varnothing\;\T{collateral\_inputs} : & \quad?\;\T{Set(OutputRef)} \\
-        \T{reference\_inputs} : & \quad?\;\T{Set(OutputRef)} \\
+        \T{spend\_inputs} : & \T{Set(Input)} \\
+        \varnothing\;\T{collateral\_inputs} : & \quad?\;\T{Set(Input)} \\
+        \T{reference\_inputs} : & \quad?\;\T{Set(Input)} \\
         \T{outputs} : & \T{[Output]} \\
         \varnothing\;\T{collateral\_return} : & \quad?\;\T{Output} \\
         \varnothing\;\T{total\_collateral} : & \quad?\;\T{Coin} \\
@@ -175,8 +175,8 @@ The data availability layer is responsible for confirming that the hashes corres
     \end{array} \right\} \\
     \T{MidgardTxBody} \coloneq\;& \left\{
     \begin{array}{ll}
-        \T{spend\_inputs} : & \mathcal{H}(\T{[OutputRef]}) \\
-        \T{reference\_inputs} : & \quad?\;\mathcal{H}(\T{[OutputRef]}) \\
+        \T{spend\_inputs} : & \mathcal{H}(\T{[Input]}) \\
+        \T{reference\_inputs} : & \quad?\;\mathcal{H}(\T{[Input]}) \\
         \T{outputs} : & \mathcal{H}(\T{[Output]}) \\
         \T{fee} : & \T{Coin} \\
         \T{validity\_interval} : & \quad?\;\T{MidgardSValidityInterval} \\

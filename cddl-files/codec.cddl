@@ -209,8 +209,11 @@ transaction_witness_set_compact =
   }
 
 ; Transaction Input
-; Full Representation (same as Compact Representation)
-transaction_input = output_reference
+; Full Representation (same as Compact Representation) TODO add compact representation
+transaction_input = 
+  { 0 : output_reference
+  , 1 : transaction_output
+  }
 
 output_reference = [transaction_id : transaction_id, index : uint .size 2]
 
